@@ -1,0 +1,12 @@
+//install.packages("RMySQL")
+//install.packages("dplyr")
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'PS2[nathan]', host = 'localhost')
+dbListTables(con) 
+myQuery <-"SELECT * FROM `prak1_data`;"
+df <- dbGetQuery(con, myQuery)
+
+#5
+library(dplyr)
+df<-filter(df, Gender=="L")
+print(df)
