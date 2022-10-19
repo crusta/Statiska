@@ -1,0 +1,15 @@
+//latihan 1
+ganteng = read.delim("clipboard")
+View(ganteng)
+str(ganteng)
+mean(ganteng$volume)
+t.test(ganteng$volume)
+
+
+
+//latihan 2
+djaya = read.delim("clipboard")
+View(djaya)
+str(djaya)
+mean(djaya$pendapatan)
+t.test(djaya$pendapatan,mu=14500)
