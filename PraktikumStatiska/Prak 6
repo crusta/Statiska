@@ -1,0 +1,36 @@
+#Nama : Nathanael Widjaya
+#NIM  : 064002100020
+
+summary(iris)
+head(iris)
+by(iris$Petal.Length,iris$Species,summary)
+mean(iris$Sepal.Length)
+var(iris$Sepal.Length)
+boxplot(iris$Petal.Length)
+boxplot(Petal.Length ~ Species, data=iris, main="Petal Length", xlab="Species", ylab="Length")
+
+hist(iris$Petal.Length)
+hist(iris$Sepal.Width)
+hist(iris$Sepal.Width[iris$Species=="setosa"])
+hist(iris$Sepal.Width[iris$Species=="versicolor"])
+d=density(iris$Petal.Length)
+plot(d)
+d=density(iris$Sepal.Width[iris$Species=="versicolor"])
+plot (d)
+
+install.packages("ggplot2")
+library(ggplot2)
+data_jaya = read.csv("C:/Users/PC/Documents/Tugas Univ/TP/prak6/DirectMarketing.csv")
+qplot(data_jaya$AmountSpent, data_jaya$Salary)
+plot(data_jaya$AmountSpent, data_jaya$Salary)
+
+tugas = read.csv("C:/Users/PC/Documents/Tugas Univ/TP/prak6/DirectMarketing.csv")
+View(tugas)
+hist(tugas$AmountSpent)
+x=density(tugas$AmountSpent)
+plot(x)
+
+rumah = read.csv("C:/Users/PC/Documents/Tugas Univ/TP/prak6/houseprices.csv")
+View(rumah)
+qplot(rumah$Price, rumah$SqFt)
+plot(rumah$Price, rumah$SqFt)
