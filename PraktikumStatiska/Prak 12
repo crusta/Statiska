@@ -1,0 +1,16 @@
+df_ntn=read.delim("clipboard")
+head(df_ntn)
+model_reg=lm(df_ntn$Y~df_ntn$X)
+summary(model_reg)
+
+#2
+df_ntn2=read.delim("clipboard")
+df_ntn2$Brick_dummy<-ifelse(df_ntn2$Brick=="YES",1,0)
+df_ntn2$N_dummy1<-ifelse(df_ntn2$Neighborhood=="West",1,0)
+df_ntn2$N_dummy2<-ifelse(df_ntn2$Neighborhood=="North",1,0)
+model=lm(df_ntn2$Price~df_ntn2$SqFt+df_ntn2$Bedrooms+df_ntn2$Bathrooms+df_ntn2$Brick_dummy+
+           df_ntn2$N_dummy1+df_ntn2$N_dummy2)
+summary(model)
+
+by(df_ntn2$Price, df_ntn2$Neighborhood, mean)
+by(df_ntn2$Price, df_ntn2$Brick, mean)
