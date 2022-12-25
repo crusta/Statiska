@@ -1,0 +1,9 @@
+oyaa = read.delim("clipboard")
+View(oyaa)
+wilcox.test(oyaa$ganjil,oyaa$genap,paired=TRUE)
+
+oya = read.delim("clipboard")
+head(oya)
+# independent 2-group Mann-Whitney U Test
+head(oya)
+rank(oya$placebo)
