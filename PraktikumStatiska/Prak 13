@@ -1,0 +1,18 @@
+df_nathan = read.delim("clipboard")
+View(df_nathan)
+
+head(df_nathan)
+
+model <- aov(korosi~metode, data=df_nathan)
+summary(model)
+
+tukey.test<-TukeyHSD(model)
+tukey.test
+
+df_nathan=PlantGrowth
+View(df_nathan)
+modelaov <- aov(weight~group, data=df_nathan)
+summary(modelaov)
+
+tukey.test<-TukeyHSD(modelaov)
+tukey.test
